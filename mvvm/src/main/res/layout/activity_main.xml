@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.example.mvvm.user" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.mvvm.MainActivity">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={user.username}"
+            android:textColor="#f9d800" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={user.password}"
+            android:textColor="#778001ff" />
+
+        <Button
+            android:id="@+id/but1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={user.visible ? @string/visible : @string/invisible}"
+            android:textAllCaps="false" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher"
+            android:visibility="@{user.visible ?  View.VISIBLE:View.GONE}" />
+    </LinearLayout>
+</layout>
