@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">paoMaDeng</string>
     <string name="begin">我是一个TextView，我是一个很长的TextView，非常非常长的TextView</string>
+    <string name="but1">Send Broadcast</string>
 </resources>

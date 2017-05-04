@@ -1,4 +1,4 @@
-package com.example.dell.paomadeng;
+package com.example.dell.paomadeng.Activity;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -8,7 +8,11 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.dell.paomadeng.R;
 
 public class MainActivity extends AppCompatActivity {
     private IntentFilter intentFilter;
@@ -19,6 +23,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         intentFilter = new IntentFilter();//IntentFilter是意图过滤器，一般定义在清单文件manifest.xml中
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        Button button = (Button) findViewById(R.id.but1);
+        button.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent("com.example.dell.paomadeng.BroadCastReceiver");
+                sendBroadcast(intent);
+            }
+        });
         /*
         * 广播接收器通过过滤器中的action、data和category来筛选广播
         * 上面添加的android.net.conn.CONNECTIVITY_CHANGE是一个action
