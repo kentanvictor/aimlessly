@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 Intent intent = new Intent("com.example.dell.paomadeng.BroadCastReceiver");
-                sendBroadcast(intent);
+                sendOrderedBroadcast(intent,null);
             }
         });
         /*

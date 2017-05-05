@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dell.paomadeng">
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/><!--这里是获取相应的权限-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- 这里是获取相应的权限 -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,17 +15,18 @@
         <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <receiver
-            android:name=".BroadCastReceiver.BootCompleteReceiver"
+            android:name=".BroadCastReceiver.MyBroadcastReceiver"
             android:enabled="true"
             android:exported="true">
-            <intent-filter><!--由于android系统启动完成之后会发出一条值为android.intent.action.BOOT_COMPLETED的广播-->
+            <intent-filter>
                 <action android:name="com.example.dell.paomadeng.BroadCastReceiver"/>
-            </intent-filter><!--所以我们在<intent-filter>这里添加了相应的action-->
+            </intent-filter>
         </receiver>
     </application>
 
