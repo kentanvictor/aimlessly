@@ -24,7 +24,7 @@
             android:name=".BroadCastReceiver.MyBroadcastReceiver"
             android:enabled="true"
             android:exported="true">
-            <intent-filter>
+            <intent-filter android:priority="1000">
                 <action android:name="com.example.dell.paomadeng.BroadCastReceiver"/>
             </intent-filter>
         </receiver>
